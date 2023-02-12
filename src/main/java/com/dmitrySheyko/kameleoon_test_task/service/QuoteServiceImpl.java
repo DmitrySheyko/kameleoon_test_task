@@ -16,12 +16,14 @@ import com.dmitrySheyko.kameleoon_test_task.repository.VoteRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -172,10 +174,22 @@ public class QuoteServiceImpl implements QuoteService {
     }
 
     @Override
-    Map<LocalDateTime, Integer> getEvolutionGraph(Long quoteId){
-        repository.findById(quoteId)
-                .orElseThrow(() -> new NotFoundException(String.format("Quote didn't downed. Quote id=%s not found", quoteId)));
-        voteRepository.getEvolutionGraph(Long quoteId);
+    public Map<LocalDateTime, Integer> getEvolutionGraph(Long quoteId) {
+        Quote quote = repository.findById(quoteId)
+                .orElseThrow(() -> new NotFoundException(String.format("Quote id=%s not found", quoteId)));
+        List<Vote> votesList = voteRepository.findAllByQuoteId(quote);
+        int score = 0;
+        Map<LocalDateTime, Integer> timeScoreMap = new HashMap<>();
+        for (Vote vote : votesList) {
+            if (vote.getIsPositive()) {
+                score++;
+            } else {
+                score--;
+            }
+            timeScoreMap.put(vote.getUpdatedOn(), score);
+        }
+        log.info("Evolution for quote id={} successfully received", quoteId);
+        return timeScoreMap;
     }
 
 }

@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  kameleoon_test_task:
+    build: .
+    container_name: kameleoon_test_task
+    ports:
+      - "8080:8080"

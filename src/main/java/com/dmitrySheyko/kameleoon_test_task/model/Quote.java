@@ -6,12 +6,12 @@ import lombok.*;
 import java.time.LocalDateTime;
 import java.util.Set;
 
+@Table(name = "quotes")
+@Entity
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Builder
-@Entity
-@Table(name = "quotes")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Quote {
@@ -31,8 +31,8 @@ public class Quote {
     @Column(name = "updated_on")
     private LocalDateTime updatedOn;
 
-//    @OneToMany(mappedBy = "quote_id",
-//            cascade = CascadeType.REMOVE)
-//    private Set<Vote> votes;
+    @OneToMany(mappedBy = "quotes",
+            cascade = CascadeType.REMOVE)
+    private Set<Vote> votes;
 
 }

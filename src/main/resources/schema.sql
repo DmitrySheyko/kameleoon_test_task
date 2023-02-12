@@ -21,6 +21,5 @@ CREATE TABLE quote_vote
     voter_id    BIGINT    NOT NULL DEFAULT -1 REFERENCES users (id) ON DELETE SET DEFAULT,
     is_positive BOOLEAN   NOT NULL,
     updated_on  TIMESTAMP NOT NULL,
-    total_score INTEGER   NOT NULL,
     CONSTRAINT pk_quote_vote_quote_id_voter_id PRIMARY KEY (quote_id, voter_id)
 );

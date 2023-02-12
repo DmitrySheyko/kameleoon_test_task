@@ -25,7 +25,6 @@ CREATE TABLE quote_vote
     voter_id    BIGINT    NOT NULL REFERENCES users (id) ON DELETE NO ACTION,
     is_positive BOOLEAN   NOT NULL,
     updated_on  TIMESTAMP NOT NULL,
-    total_score INTEGER   NOT NULL,
     CONSTRAINT pk_quote_vote_quote_id_voter_id PRIMARY KEY (quote_id, voter_id)
 );
 
@@ -38,6 +37,6 @@ VALUES (1, 'TestContent_1', '2021-01-01T10:10:10'),
        (2, 'TestContent_2', '2022-02-02T10:10:10'),
        (2, 'TestContent_3', '2022-03-03T10:10:10');
 
-INSERT INTO quote_vote (quote_id, voter_id, is_positive, updated_on, total_score)
-VALUES (2, 1, true, '2021-01-01T10:10:10', ),
-       (3, 1, false, '2021-01-01T10:10:10', );
+INSERT INTO quote_vote (quote_id, voter_id, is_positive, updated_on)
+VALUES (2, 1, true, '2021-01-01T10:10:10'),
+       (3, 1, false, '2021-01-01T10:10:10');

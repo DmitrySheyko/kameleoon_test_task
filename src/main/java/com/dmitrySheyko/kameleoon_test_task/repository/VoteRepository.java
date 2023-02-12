@@ -1,5 +1,6 @@
 package com.dmitrySheyko.kameleoon_test_task.repository;
 
+import com.dmitrySheyko.kameleoon_test_task.model.Quote;
 import com.dmitrySheyko.kameleoon_test_task.model.Vote;
 import com.dmitrySheyko.kameleoon_test_task.model.VoteId;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -54,9 +55,15 @@ public interface VoteRepository extends JpaRepository<Vote, VoteId> {
             "LIMIT 10;", nativeQuery = true)
     List<Long> getFlopQuotesId();
 
-    @Query(value = "SELECT q. " +
-            "FROM quote_vote q " +
-            "WHERE q.QUOTE_ID = ?1 ", nativeQuery = true)
-    Map<LocalDateTime, Integer> getEvolutionGraph(Long quoteId);
+    @Query("SELECT v " +
+            "FROM Vote v " +
+            "WHERE v.id.quote = :quote " +
+            "ORDER BY v.updatedOn ")
+    List<Vote>findAllByQuoteId(Quote quote);
+
+//    @Query(value = "SELECT q. " +
+//            "FROM quote_vote q " +
+//            "WHERE q.QUOTE_ID = ?1 ", nativeQuery = true)
+//    Map<LocalDateTime, Integer> getEvolutionGraph(Long quoteId);
 
 }

@@ -24,7 +24,4 @@ public class Vote {
     @Column(name = "updated_on")
     private LocalDateTime updatedOn;
 
-    @Column(name = "total_score")
-    private Integer totalScore;
-
 }
