@@ -1,5 +1,7 @@
 package com.dmitrySheyko.kameleoon_test_task.controller;
 
+import com.dmitrySheyko.kameleoon_test_task.model.DateScore;
+import com.dmitrySheyko.kameleoon_test_task.model.Quote;
 import com.dmitrySheyko.kameleoon_test_task.model.dto.InputQuoteDto;
 import com.dmitrySheyko.kameleoon_test_task.model.dto.OutputQuoteDto;
 import com.dmitrySheyko.kameleoon_test_task.model.dto.UpdateQuoteDto;
@@ -8,10 +10,13 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Map;
 
+/**
+ * Controller for entity {@link Quote}
+ *
+ * @author Dmitry Sheyko
+ */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/quote")
@@ -37,13 +42,13 @@ public class QuoteController {
         return service.delete(quoteId, creatorId);
     }
 
-    @PostMapping("/{id}/upvote")
+    @PatchMapping("/{id}/upvote")
     public OutputQuoteDto upVote(@PathVariable(name = "id") Long quoteId,
                                  @RequestParam(name = "id") Long userId) {
         return service.upVote(quoteId, userId);
     }
 
-    @PostMapping("/{id}/downvote")
+    @PatchMapping("/{id}/downvote")
     public OutputQuoteDto downVote(@PathVariable(name = "id") Long quoteId,
                                    @RequestParam(name = "id") Long userId) {
         return service.downVote(quoteId, userId);
@@ -52,6 +57,11 @@ public class QuoteController {
     @GetMapping("/{id}")
     public OutputQuoteDto getById(@PathVariable(name = "id") Long quoteId) {
         return service.getById(quoteId);
+    }
+
+    @GetMapping
+    public List<OutputQuoteDto> getAll() {
+        return service.getAll();
     }
 
     @GetMapping("/top")
@@ -65,7 +75,8 @@ public class QuoteController {
     }
 
     @GetMapping("/graph/{id}")
-public Map<LocalDateTime, Integer> getEvolutionGraph(@PathVariable(name = "id") Long quoteId){
-    return service.getEvolutionGraph(quoteId);
+    public List<DateScore> getEvolutionGraph(@PathVariable(name = "id") Long quoteId) {
+        return service.getEvolutionGraph(quoteId);
     }
+
 }

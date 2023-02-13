@@ -1,0 +1,1626 @@
+{
+	"info": {
+		"_postman_id": "465434b7-0585-40b3-b222-b93e9cbb6048",
+		"name": "Kameleoon_test_task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22462895"
+	},
+	"item": [
+		{
+			"name": "Add new user 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);",
+							"    pm.expect(jsonData.name, '\"name\" field').to.eql('UserName_1');",
+							"    pm.expect(jsonData.password, '\"password\" field').to.eql('UserPassword_1');",
+							"    pm.expect(jsonData.email, '\"email\" field').to.eql('User_1@email.ru');",
+							"    pm.expect(jsonData.createdOn, '\"createdOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"UserName_1\",\n  \"password\": \"UserPassword_1\",\n  \"email\": \"User_1@email.ru\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new user 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(2);",
+							"    pm.expect(jsonData.name, '\"name\" field').to.eql('UserName_2');",
+							"    pm.expect(jsonData.password, '\"password\" field').to.eql('UserPassword_2');",
+							"    pm.expect(jsonData.email, '\"email\" field').to.eql('User_2@email.ru');",
+							"    pm.expect(jsonData.createdOn, '\"createdOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"UserName_2\",\n  \"password\": \"UserPassword_2\",\n  \"email\": \"User_2@email.ru\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new user 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(3);",
+							"    pm.expect(jsonData.name, '\"name\" field').to.eql('UserName_3');",
+							"    pm.expect(jsonData.password, '\"password\" field').to.eql('UserPassword_3');",
+							"    pm.expect(jsonData.email, '\"email\" field').to.eql('User_3@email.ru');",
+							"    pm.expect(jsonData.createdOn, '\"createdOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"UserName_3\",\n  \"password\": \"UserPassword_3\",\n  \"email\": \"User_3@email.ru\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new user 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(4);",
+							"    pm.expect(jsonData.name, '\"name\" field').to.eql('UserName_4');",
+							"    pm.expect(jsonData.password, '\"password\" field').to.eql('UserPassword_4');",
+							"    pm.expect(jsonData.email, '\"email\" field').to.eql('User_4@email.ru');",
+							"    pm.expect(jsonData.createdOn, '\"createdOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"UserName_4\",\n  \"password\": \"UserPassword_4\",\n  \"email\": \"User_4@email.ru\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new user 5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(5);",
+							"    pm.expect(jsonData.name, '\"name\" field').to.eql('UserName_5');",
+							"    pm.expect(jsonData.password, '\"password\" field').to.eql('UserPassword_5');",
+							"    pm.expect(jsonData.email, '\"email\" field').to.eql('User_5@email.ru');",
+							"    pm.expect(jsonData.createdOn, '\"createdOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"UserName_5\",\n  \"password\": \"UserPassword_5\",\n  \"email\": \"User_5@email.ru\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new user SAME EMAIL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([400,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"UserName_5\",\n  \"password\": \"UserPassword_5\",\n  \"email\": \"User_5@email.ru\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new Quote 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);",
+							"    pm.expect(jsonData.creator.id, '\"id\" field').to.eql(1);",
+							"    pm.expect(jsonData.creator.name, '\"name\" field').to.eql('UserName_1');",
+							"    pm.expect(jsonData.creator.password, '\"password\" field').to.eql('UserPassword_1');",
+							"    pm.expect(jsonData.creator.email, '\"email\" field').to.eql('User_1@email.ru');",
+							"    pm.expect(jsonData.creator.createdOn, '\"createdOn\" field').not.null;",
+							"    pm.expect(jsonData.content, '\"content\" field').to.eql('Content_1');",
+							"    pm.expect(jsonData.score, '\"score\" field').to.eql(0);",
+							"    pm.expect(jsonData.updatedOn, '\"updatedOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"content\": \"Content_1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/quote?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new Quote 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(2);",
+							"    pm.expect(jsonData.creator.id, '\"id\" field').to.eql(2);",
+							"    pm.expect(jsonData.creator.name, '\"name\" field').to.eql('UserName_2');",
+							"    pm.expect(jsonData.creator.password, '\"password\" field').to.eql('UserPassword_2');",
+							"    pm.expect(jsonData.creator.email, '\"email\" field').to.eql('User_2@email.ru');",
+							"    pm.expect(jsonData.creator.createdOn, '\"createdOn\" field').not.null;",
+							"    pm.expect(jsonData.content, '\"content\" field').to.eql('Content_2');",
+							"    pm.expect(jsonData.score, '\"score\" field').to.eql(0);",
+							"    pm.expect(jsonData.updatedOn, '\"updatedOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"content\": \"Content_2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/quote?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new Quote 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(3);",
+							"    pm.expect(jsonData.creator.id, '\"id\" field').to.eql(3);",
+							"    pm.expect(jsonData.creator.name, '\"name\" field').to.eql('UserName_3');",
+							"    pm.expect(jsonData.creator.password, '\"password\" field').to.eql('UserPassword_3');",
+							"    pm.expect(jsonData.creator.email, '\"email\" field').to.eql('User_3@email.ru');",
+							"    pm.expect(jsonData.creator.createdOn, '\"createdOn\" field').not.null;",
+							"    pm.expect(jsonData.content, '\"content\" field').to.eql('Content_3');",
+							"    pm.expect(jsonData.score, '\"score\" field').to.eql(0);",
+							"    pm.expect(jsonData.updatedOn, '\"updatedOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"content\": \"Content_3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/quote?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new Quote 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(4);",
+							"    pm.expect(jsonData.creator.id, '\"id\" field').to.eql(4);",
+							"    pm.expect(jsonData.creator.name, '\"name\" field').to.eql('UserName_4');",
+							"    pm.expect(jsonData.creator.password, '\"password\" field').to.eql('UserPassword_4');",
+							"    pm.expect(jsonData.creator.email, '\"email\" field').to.eql('User_4@email.ru');",
+							"    pm.expect(jsonData.creator.createdOn, '\"createdOn\" field').not.null;",
+							"    pm.expect(jsonData.content, '\"content\" field').to.eql('Content_4');",
+							"    pm.expect(jsonData.score, '\"score\" field').to.eql(0);",
+							"    pm.expect(jsonData.updatedOn, '\"updatedOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"content\": \"Content_4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/quote?id=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new Quote BLANK CONTENT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([400,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"content\": \"  \"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/quote?id=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete quote 4 WRONG USER",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([400,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/1?id=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"1"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete quote 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/4?id=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"4"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User 2 upvote quote 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);",
+							"    pm.expect(jsonData.creator.id, '\"id\" field').to.eql(1);",
+							"    pm.expect(jsonData.creator.name, '\"name\" field').to.eql('UserName_1');",
+							"    pm.expect(jsonData.creator.password, '\"password\" field').to.eql('UserPassword_1');",
+							"    pm.expect(jsonData.creator.email, '\"email\" field').to.eql('User_1@email.ru');",
+							"    pm.expect(jsonData.creator.createdOn, '\"createdOn\" field').not.null;",
+							"    pm.expect(jsonData.content, '\"content\" field').to.eql('Content_1');",
+							"    pm.expect(jsonData.score, '\"score\" field').to.eql(1);",
+							"    pm.expect(jsonData.updatedOn, '\"updatedOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"content\": \"Content_4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/quote/1/upvote?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"1",
+						"upvote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User 2 upvote quote 1 DUBLICATE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([400,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/1/upvote?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"1",
+						"upvote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User 3 upvote quote 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);",
+							"    pm.expect(jsonData.creator.id, '\"id\" field').to.eql(1);",
+							"    pm.expect(jsonData.creator.name, '\"name\" field').to.eql('UserName_1');",
+							"    pm.expect(jsonData.creator.password, '\"password\" field').to.eql('UserPassword_1');",
+							"    pm.expect(jsonData.creator.email, '\"email\" field').to.eql('User_1@email.ru');",
+							"    pm.expect(jsonData.creator.createdOn, '\"createdOn\" field').not.null;",
+							"    pm.expect(jsonData.content, '\"content\" field').to.eql('Content_1');",
+							"    pm.expect(jsonData.score, '\"score\" field').to.eql(2);",
+							"    pm.expect(jsonData.updatedOn, '\"updatedOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/1/upvote?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"1",
+						"upvote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User 4 upvote quote 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);",
+							"    pm.expect(jsonData.creator.id, '\"id\" field').to.eql(1);",
+							"    pm.expect(jsonData.creator.name, '\"name\" field').to.eql('UserName_1');",
+							"    pm.expect(jsonData.creator.password, '\"password\" field').to.eql('UserPassword_1');",
+							"    pm.expect(jsonData.creator.email, '\"email\" field').to.eql('User_1@email.ru');",
+							"    pm.expect(jsonData.creator.createdOn, '\"createdOn\" field').not.null;",
+							"    pm.expect(jsonData.content, '\"content\" field').to.eql('Content_1');",
+							"    pm.expect(jsonData.score, '\"score\" field').to.eql(3);",
+							"    pm.expect(jsonData.updatedOn, '\"updatedOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/1/upvote?id=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"1",
+						"upvote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User 5 upvote quote 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(1);",
+							"    pm.expect(jsonData.creator.id, '\"id\" field').to.eql(1);",
+							"    pm.expect(jsonData.creator.name, '\"name\" field').to.eql('UserName_1');",
+							"    pm.expect(jsonData.creator.password, '\"password\" field').to.eql('UserPassword_1');",
+							"    pm.expect(jsonData.creator.email, '\"email\" field').to.eql('User_1@email.ru');",
+							"    pm.expect(jsonData.creator.createdOn, '\"createdOn\" field').not.null;",
+							"    pm.expect(jsonData.content, '\"content\" field').to.eql('Content_1');",
+							"    pm.expect(jsonData.score, '\"score\" field').to.eql(4);",
+							"    pm.expect(jsonData.updatedOn, '\"updatedOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/1/upvote?id=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"1",
+						"upvote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User 1 upvote quote 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(2);",
+							"    pm.expect(jsonData.creator.id, '\"id\" field').to.eql(2);",
+							"    pm.expect(jsonData.creator.name, '\"name\" field').to.eql('UserName_2');",
+							"    pm.expect(jsonData.creator.password, '\"password\" field').to.eql('UserPassword_2');",
+							"    pm.expect(jsonData.creator.email, '\"email\" field').to.eql('User_2@email.ru');",
+							"    pm.expect(jsonData.creator.createdOn, '\"createdOn\" field').not.null;",
+							"    pm.expect(jsonData.content, '\"content\" field').to.eql('Content_2');",
+							"    pm.expect(jsonData.score, '\"score\" field').to.eql(1);",
+							"    pm.expect(jsonData.updatedOn, '\"updatedOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/2/upvote?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"2",
+						"upvote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User 1 upvote quote 2 DUBLICATE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([400,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/2/upvote?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"2",
+						"upvote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User 3 upvote quote 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(2);",
+							"    pm.expect(jsonData.creator.id, '\"id\" field').to.eql(2);",
+							"    pm.expect(jsonData.creator.name, '\"name\" field').to.eql('UserName_2');",
+							"    pm.expect(jsonData.creator.password, '\"password\" field').to.eql('UserPassword_2');",
+							"    pm.expect(jsonData.creator.email, '\"email\" field').to.eql('User_2@email.ru');",
+							"    pm.expect(jsonData.creator.createdOn, '\"createdOn\" field').not.null;",
+							"    pm.expect(jsonData.content, '\"content\" field').to.eql('Content_2');",
+							"    pm.expect(jsonData.score, '\"score\" field').to.eql(2);",
+							"    pm.expect(jsonData.updatedOn, '\"updatedOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/2/upvote?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"2",
+						"upvote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User 4 downvote quite 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(2);",
+							"    pm.expect(jsonData.creator.id, '\"id\" field').to.eql(2);",
+							"    pm.expect(jsonData.creator.name, '\"name\" field').to.eql('UserName_2');",
+							"    pm.expect(jsonData.creator.password, '\"password\" field').to.eql('UserPassword_2');",
+							"    pm.expect(jsonData.creator.email, '\"email\" field').to.eql('User_2@email.ru');",
+							"    pm.expect(jsonData.creator.createdOn, '\"createdOn\" field').not.null;",
+							"    pm.expect(jsonData.content, '\"content\" field').to.eql('Content_2');",
+							"    pm.expect(jsonData.score, '\"score\" field').to.eql(1);",
+							"    pm.expect(jsonData.updatedOn, '\"updatedOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/2/downvote?id=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"2",
+						"downvote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User 5 downvote quote 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(2);",
+							"    pm.expect(jsonData.creator.id, '\"id\" field').to.eql(2);",
+							"    pm.expect(jsonData.creator.name, '\"name\" field').to.eql('UserName_2');",
+							"    pm.expect(jsonData.creator.password, '\"password\" field').to.eql('UserPassword_2');",
+							"    pm.expect(jsonData.creator.email, '\"email\" field').to.eql('User_2@email.ru');",
+							"    pm.expect(jsonData.creator.createdOn, '\"createdOn\" field').not.null;",
+							"    pm.expect(jsonData.content, '\"content\" field').to.eql('Content_2');",
+							"    pm.expect(jsonData.score, '\"score\" field').to.eql(0);",
+							"    pm.expect(jsonData.updatedOn, '\"updatedOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/2/downvote?id=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"2",
+						"downvote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User 1 downvote quote 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(3);",
+							"    pm.expect(jsonData.creator.id, '\"id\" field').to.eql(3);",
+							"    pm.expect(jsonData.creator.name, '\"name\" field').to.eql('UserName_3');",
+							"    pm.expect(jsonData.creator.password, '\"password\" field').to.eql('UserPassword_3');",
+							"    pm.expect(jsonData.creator.email, '\"email\" field').to.eql('User_3@email.ru');",
+							"    pm.expect(jsonData.creator.createdOn, '\"createdOn\" field').not.null;",
+							"    pm.expect(jsonData.content, '\"content\" field').to.eql('Content_3');",
+							"    pm.expect(jsonData.score, '\"score\" field').to.eql(-1);",
+							"    pm.expect(jsonData.updatedOn, '\"updatedOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/3/downvote?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"3",
+						"downvote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User 1 downvote quote 3 DUBLICATE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([400,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/3/downvote?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"3",
+						"downvote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User 2 downvote quote 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(3);",
+							"    pm.expect(jsonData.creator.id, '\"id\" field').to.eql(3);",
+							"    pm.expect(jsonData.creator.name, '\"name\" field').to.eql('UserName_3');",
+							"    pm.expect(jsonData.creator.password, '\"password\" field').to.eql('UserPassword_3');",
+							"    pm.expect(jsonData.creator.email, '\"email\" field').to.eql('User_3@email.ru');",
+							"    pm.expect(jsonData.creator.createdOn, '\"createdOn\" field').not.null;",
+							"    pm.expect(jsonData.content, '\"content\" field').to.eql('Content_3');",
+							"    pm.expect(jsonData.score, '\"score\" field').to.eql(-2);",
+							"    pm.expect(jsonData.updatedOn, '\"updatedOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/3/downvote?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"3",
+						"downvote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User 4 downvote quite 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(3);",
+							"    pm.expect(jsonData.creator.id, '\"id\" field').to.eql(3);",
+							"    pm.expect(jsonData.creator.name, '\"name\" field').to.eql('UserName_3');",
+							"    pm.expect(jsonData.creator.password, '\"password\" field').to.eql('UserPassword_3');",
+							"    pm.expect(jsonData.creator.email, '\"email\" field').to.eql('User_3@email.ru');",
+							"    pm.expect(jsonData.creator.createdOn, '\"createdOn\" field').not.null;",
+							"    pm.expect(jsonData.content, '\"content\" field').to.eql('Content_3');",
+							"    pm.expect(jsonData.score, '\"score\" field').to.eql(-3);",
+							"    pm.expect(jsonData.updatedOn, '\"updatedOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/3/downvote?id=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"3",
+						"downvote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User 5 downvote quote 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"pm.test(\"Test\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id, '\"id\" field').to.eql(3);",
+							"    pm.expect(jsonData.creator.id, '\"id\" field').to.eql(3);",
+							"    pm.expect(jsonData.creator.name, '\"name\" field').to.eql('UserName_3');",
+							"    pm.expect(jsonData.creator.password, '\"password\" field').to.eql('UserPassword_3');",
+							"    pm.expect(jsonData.creator.email, '\"email\" field').to.eql('User_3@email.ru');",
+							"    pm.expect(jsonData.creator.createdOn, '\"createdOn\" field').not.null;",
+							"    pm.expect(jsonData.content, '\"content\" field').to.eql('Content_3');",
+							"    pm.expect(jsonData.score, '\"score\" field').to.eql(-4);",
+							"    pm.expect(jsonData.updatedOn, '\"updatedOn\" field').not.null;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/3/downvote?id=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"3",
+						"downvote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get top quotes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							"",
+							"pm.test(\"Test \", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.length, 'bookings count in total').to.eql(3);",
+							"",
+							"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(1);",
+							"    pm.expect(jsonData[1].id, 'result[0]: \"id\" field').to.eql(2);",
+							"    pm.expect(jsonData[2].id, 'result[0]: \"id\" field').to.eql(3);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/top",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"top"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get flop quotes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							"",
+							"pm.test(\"Test \", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.length, 'bookings count in total').to.eql(3);",
+							"",
+							"    pm.expect(jsonData[0].id, 'result[0]: \"id\" field').to.eql(3);",
+							"    pm.expect(jsonData[1].id, 'result[0]: \"id\" field').to.eql(2);",
+							"    pm.expect(jsonData[2].id, 'result[0]: \"id\" field').to.eql(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/flop",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"flop"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get evolution quote 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							"",
+							"pm.test(\"Test \", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.length, 'bookings count in total').to.eql(4);",
+							"",
+							"    pm.expect(jsonData[0].score, 'result[0]: \"score\" field').to.eql(1);",
+							"    pm.expect(jsonData[1].score, 'result[0]: \"score\" field').to.eql(2);",
+							"    pm.expect(jsonData[2].score, 'result[0]: \"score\" field').to.eql(3);",
+							"    pm.expect(jsonData[3].score, 'result[0]: \"score\" field').to.eql(4);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/graph/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"graph",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get evolution quote 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							"",
+							"pm.test(\"Test \", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.length, 'bookings count in total').to.eql(4);",
+							"",
+							"    pm.expect(jsonData[0].score, 'result[0]: \"score\" field').to.eql(1);",
+							"    pm.expect(jsonData[1].score, 'result[0]: \"score\" field').to.eql(2);",
+							"    pm.expect(jsonData[2].score, 'result[0]: \"score\" field').to.eql(1);",
+							"    pm.expect(jsonData[3].score, 'result[0]: \"score\" field').to.eql(0);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/graph/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"graph",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get evolution quote 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							"",
+							"pm.test(\"Test \", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.length, 'bookings count in total').to.eql(4);",
+							"",
+							"    pm.expect(jsonData[0].score, 'result[0]: \"score\" field').to.eql(-1);",
+							"    pm.expect(jsonData[1].score, 'result[0]: \"score\" field').to.eql(-2);",
+							"    pm.expect(jsonData[2].score, 'result[0]: \"score\" field').to.eql(-3);",
+							"    pm.expect(jsonData[3].score, 'result[0]: \"score\" field').to.eql(-4);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quote/graph/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quote",
+						"graph",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

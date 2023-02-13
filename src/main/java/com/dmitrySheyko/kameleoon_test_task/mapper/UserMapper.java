@@ -5,6 +5,11 @@ import com.dmitrySheyko.kameleoon_test_task.model.dto.InputUserDto;
 import com.dmitrySheyko.kameleoon_test_task.model.dto.OutputUserDto;
 import org.springframework.stereotype.Component;
 
+/**
+ * Class with set of mappers for entity {@link User} and it DTOs
+ *
+ * @author Dmitry Sheyko
+ */
 @Component
 public class UserMapper {
 
@@ -20,7 +25,7 @@ public class UserMapper {
 
     }
 
-    public static OutputUserDto toOutputUserDto(User user){
+    public static OutputUserDto toOutputUserDto(User user) {
         if (user == null) {
             return null;
         }
@@ -33,4 +38,5 @@ public class UserMapper {
                 .build();
 
     }
+
 }

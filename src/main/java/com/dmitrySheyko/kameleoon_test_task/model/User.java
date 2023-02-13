@@ -7,12 +7,17 @@ import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Class of entity {@link User}.
+ *
+ * @author Dmitry Sheyko
+ */
+@Table(name = "users")
+@Entity
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Builder
-@Entity
-@Table(name = "users")
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {

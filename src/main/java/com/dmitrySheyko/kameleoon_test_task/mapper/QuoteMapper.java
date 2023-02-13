@@ -7,10 +7,13 @@ import com.dmitrySheyko.kameleoon_test_task.model.dto.OutputQuoteDto;
 import com.dmitrySheyko.kameleoon_test_task.model.dto.UpdateQuoteDto;
 import org.springframework.stereotype.Component;
 
+/**
+ * Class with set of mappers for entity {@link Quote} and it DTOs
+ *
+ * @author Dmitry Sheyko
+ */
 @Component
 public class QuoteMapper {
-
-
 
     public static Quote toEntity(InputQuoteDto quoteDto, User creator) {
         if (quoteDto == null) {
@@ -45,7 +48,5 @@ public class QuoteMapper {
                 .score(score)
                 .build();
     }
-
-
 
 }

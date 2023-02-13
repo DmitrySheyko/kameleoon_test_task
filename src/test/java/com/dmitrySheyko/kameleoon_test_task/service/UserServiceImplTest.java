@@ -1,7 +1,9 @@
 package com.dmitrySheyko.kameleoon_test_task.service;
 
+import com.dmitrySheyko.kameleoon_test_task.model.User;
 import com.dmitrySheyko.kameleoon_test_task.model.dto.InputUserDto;
 import com.dmitrySheyko.kameleoon_test_task.model.dto.OutputUserDto;
+import com.dmitrySheyko.kameleoon_test_task.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -10,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 
 @Transactional
 @SpringBootTest(properties = "spring.sql.init.data-locations=data-test.sql",
@@ -17,27 +20,37 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
 class UserServiceImplTest {
 
-    private final UserServiceImpl userService;
+    private final UserService service;
+    private final UserRepository repository;
 
     @Test
-    void add() {
-        InputUserDto inputUserDto1 = InputUserDto.builder()
-                .name("TestName_3")
-                .password("TestPassword_3")
-                .email("Test_3@mail.ru")
-                .build();
-        OutputUserDto outputUserDto = userService.add(inputUserDto1);
-        Assertions.assertEquals(3, outputUserDto.getId());
-        Assertions.assertEquals("TestName_3", outputUserDto.getName());
-        Assertions.assertEquals("TestPassword_3", outputUserDto.getPassword());
-        Assertions.assertEquals("Test_3@mail.ru", outputUserDto.getEmail());
+    void shouldAddNewUser() {
+        List<User> usersList = repository.findAll();
+        Assertions.assertEquals(5, usersList.size());
 
-        InputUserDto dtoWithSameEmail = InputUserDto.builder()
-                .name("TestName_4")
-                .password("TestPassword_4")
-                .email("Test_3@mail.ru")
+        InputUserDto inputUserDto = InputUserDto.builder()
+                .name("TestName_6")
+                .password("TestPassword_6")
+                .email("Test_6@email.ru")
                 .build();
-        Assertions.assertThrows(DataIntegrityViolationException.class, () -> userService.add(dtoWithSameEmail));
+        OutputUserDto outputUserDto = service.add(inputUserDto);
+        Assertions.assertEquals(6, outputUserDto.getId());
+        Assertions.assertEquals("TestName_6", outputUserDto.getName());
+        Assertions.assertEquals("TestPassword_6", outputUserDto.getPassword());
+        Assertions.assertEquals("Test_6@email.ru", outputUserDto.getEmail());
+
+        usersList = repository.findAll();
+        Assertions.assertEquals(6, usersList.size());
+    }
+
+    @Test
+    void shouldThrowExceptionInCaseOfNewUserWithSameEmail() {
+        InputUserDto dtoWithSameEmail = InputUserDto.builder()
+                .name("TestName")
+                .password("TestPassword")
+                .email("Test_1@email.ru")
+                .build();
+        Assertions.assertThrows(DataIntegrityViolationException.class, () -> service.add(dtoWithSameEmail));
     }
 
 }

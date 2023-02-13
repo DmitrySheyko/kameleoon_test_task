@@ -8,12 +8,20 @@ import com.dmitrySheyko.kameleoon_test_task.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
+/**
+ * Class of service for entity {@link User}.
+ * Implementation of interface {@link UserService}
+ *
+ * @author Dmitry Sheyko
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class UserServiceImpl implements UserService {
 
     private final UserRepository repository;

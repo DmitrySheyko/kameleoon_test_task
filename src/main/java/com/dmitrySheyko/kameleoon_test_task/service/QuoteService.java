@@ -1,14 +1,18 @@
 package com.dmitrySheyko.kameleoon_test_task.service;
 
+import com.dmitrySheyko.kameleoon_test_task.model.DateScore;
+import com.dmitrySheyko.kameleoon_test_task.model.Quote;
 import com.dmitrySheyko.kameleoon_test_task.model.dto.InputQuoteDto;
 import com.dmitrySheyko.kameleoon_test_task.model.dto.OutputQuoteDto;
 import com.dmitrySheyko.kameleoon_test_task.model.dto.UpdateQuoteDto;
-import org.springframework.web.bind.annotation.PathVariable;
 
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Map;
 
+/**
+ * Interface of service class for entity {@link Quote}.
+ *
+ * @author Dmitry Sheyko
+ */
 public interface QuoteService {
 
     OutputQuoteDto add(InputQuoteDto quoteDto, Long creatorId);
@@ -23,10 +27,12 @@ public interface QuoteService {
 
     OutputQuoteDto getById(Long quoteId);
 
+    List<OutputQuoteDto> getAll();
+
     List<OutputQuoteDto> getTopQuotes();
 
     List<OutputQuoteDto> getFlopQuotes();
 
-    Map<LocalDateTime, Integer> getEvolutionGraph(Long quoteId);
+    List<DateScore> getEvolutionGraph(Long quoteId);
 
 }

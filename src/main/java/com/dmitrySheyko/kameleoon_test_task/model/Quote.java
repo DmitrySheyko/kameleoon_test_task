@@ -6,6 +6,11 @@ import lombok.*;
 import java.time.LocalDateTime;
 import java.util.Set;
 
+/**
+ * Class of entity {@link Quote}.
+ *
+ * @author Dmitry Sheyko
+ */
 @Table(name = "quotes")
 @Entity
 @Getter
@@ -31,8 +36,7 @@ public class Quote {
     @Column(name = "updated_on")
     private LocalDateTime updatedOn;
 
-    @OneToMany(mappedBy = "quotes",
-            cascade = CascadeType.REMOVE)
+    @OneToMany(cascade = CascadeType.REMOVE)
     private Set<Vote> votes;
 
 }

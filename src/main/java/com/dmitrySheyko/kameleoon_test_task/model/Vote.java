@@ -5,18 +5,32 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
+/**
+ * Class of entity {@link Vote}.
+ *
+ * @author Dmitry Sheyko
+ */
+@Table(name = "quote_vote")
+@Entity
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Builder
-@Entity
-@Table(name = "quote_vote") //TODO переместить вверх везде
 @NoArgsConstructor
 @AllArgsConstructor
 public class Vote {
 
-    @EmbeddedId
-    private VoteId id = new VoteId();
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @ManyToOne
+    @JoinColumn(name = "quote_id")
+    private Quote quote;
+
+    @ManyToOne
+    @JoinColumn(name = "voter_id")
+    private User voter;
 
     @Column(name = "is_positive")
     private Boolean isPositive;

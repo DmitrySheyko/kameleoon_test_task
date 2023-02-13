@@ -4,6 +4,12 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Class of entity {@link ErrorResponse}.
+ * This returns by ErrorHandlers placed in class {@link ErrorHandler} in the case of exception.
+ *
+ * @author Dmitry Sheyko
+ */
 @Getter
 @Setter
 @Builder

@@ -1,5 +1,6 @@
 package com.dmitrySheyko.kameleoon_test_task.controller;
 
+import com.dmitrySheyko.kameleoon_test_task.model.User;
 import com.dmitrySheyko.kameleoon_test_task.model.dto.InputUserDto;
 import com.dmitrySheyko.kameleoon_test_task.model.dto.OutputUserDto;
 import com.dmitrySheyko.kameleoon_test_task.service.UserService;
@@ -10,6 +11,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Controller for entity {@link User}
+ *
+ * @author Dmitry Sheyko
+ */
 @RestController
 @RequestMapping("/user")
 @RequiredArgsConstructor

@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+
+    hibernate:
+      ddl-auto: update
+
+  sql:
+    init:
+      mode: always
+
+  liquibase:
+    enabled: true
+    change-log: db/changelog/db.changelog-master.xml
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    password: test
+    username: test
