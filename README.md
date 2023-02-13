@@ -6,6 +6,10 @@
 - database: h2;
 - database version control: liquibase.
 
+### Tests:
+By [link](https://github.com/DmitrySheyko/kameleoon_test_task/blob/main/postman-tests/kameleoon_test_task.json) presented set of Postman tests.
+
+
 ### Functions:
  - creation of user accounts;
  - creation of quotes;
