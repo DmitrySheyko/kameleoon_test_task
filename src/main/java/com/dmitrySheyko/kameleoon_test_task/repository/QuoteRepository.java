@@ -30,7 +30,7 @@ public interface QuoteRepository extends JpaRepository<Quote, Long> {
                     ORDER BY score DESC) reting
             ON quotes.id = reting.id
             LIMIT 10; """, nativeQuery = true)
-    List<Quote> getTopQuotesId();
+    List<Quote> getTopQuotes();
 
     @Query(value = """
             SELECT quotes.* 
@@ -49,6 +49,6 @@ public interface QuoteRepository extends JpaRepository<Quote, Long> {
                     ORDER BY score ) reting
             ON quotes.id = reting.id
             LIMIT 10; """, nativeQuery = true)
-    List<Quote> getFlopQuotesId();
+    List<Quote> getFlopQuotes();
 
 }

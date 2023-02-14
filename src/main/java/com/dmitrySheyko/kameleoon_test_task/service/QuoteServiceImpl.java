@@ -172,7 +172,7 @@ public class QuoteServiceImpl implements QuoteService {
     @Override
     @Transactional(readOnly = true)
     public List<OutputQuoteDto> getTopQuotes() {
-        List<Quote> topQuotesList = repository.getTopQuotesId();
+        List<Quote> topQuotesList = repository.getTopQuotes();
         List<OutputQuoteDto> topQuotesDtoList = topQuotesList.stream()
                 .map(quote -> {
                     int currentScore = voteRepository.calculateScore(quote.getId());
@@ -186,7 +186,7 @@ public class QuoteServiceImpl implements QuoteService {
     @Override
     @Transactional(readOnly = true)
     public List<OutputQuoteDto> getFlopQuotes() {
-        List<Quote> flopQuotesList = repository.getFlopQuotesId();
+        List<Quote> flopQuotesList = repository.getFlopQuotes();
         List<OutputQuoteDto> flopQuotesDtoList = flopQuotesList.stream()
                 .map(quote -> {
                     int currentScore = voteRepository.calculateScore(quote.getId());
